@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,100 +18,107 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
+
 <body>
 
     <nav id="navbar"></nav>
-
-
-    
-    <!-- Fullpage Reuired HTML -->
     <div id="fullpage">
         <div class="section">
-
-            <!-- Slide 1 - FILTER FORM -->
-            <div class="slide">
+            <div class="slide" id="slide1">
                 <div class="header">
-
-
+                    <img src="./imgs/sun.svg" alt="sun" id="sun">
+                    <img src="./imgs/waves1.svg" alt="waves 1" id="waves1">
+                    <h1 id="scrollText">TAHA MOANA</h1>
+                    <img src="./imgs/waves2.svg" alt="waves 2" id="waves2">
+                    <img src="./imgs/waves3.svg" alt="waves 3" id="waves3">
+                    <img src="./imgs/waves4.svg" alt="waves 4" id="waves4">
+                    <img src="./imgs/waves5.svg" alt="waves 5" id="waves5"> 
                 </div>
 
                 <div class="form-container">
                     <h2>Find a place</h2>
 
-                <form class="filter-container">
+                    <form class="filter-container">
 
-                    <!-- Number of Guests -->
-                    <div class="filter">
-                        <label for="">Number of Guests:</label>
-                        <select name="guests" id="guests" class="full-width-select" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
+                        <!-- Number of Guests -->
+                        <div class="filter">
+                            <label for="guests">Number of Guests:</label>
+                            <select name="guests" id="guests" class="full-width-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
 
-                    <!-- Location Filter -->
-                    <div class="filter">
-                        <label for="region">Region</label>
-                        <select name="region" id="region" class="full-width-select" required>
-                        </select>
-                    </div>
+                        <!--Type of Accommodation-->
+                        <div class="filter">
+                            <label for="accommodation">Type of Accommodation</label>
+                            <select name="accommodation" id="accommodation" class="select">
+                                <option value="">Any</option>
+                                <option value="Motel">Motel</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Hostel">Hostel</option>
+                                <option value="House">House</option>
+                            </select>
+                        </div>
 
-                    <!--Type of Accommodation-->
-                    <div class="filter">
-                        <label for="accommodation">Type of Accommodation</label>
-                        <select name="accommodation" id="accommodation" class="full-width-select" required>
-                            <option value="">Any</option>
-                            <option value="Motel">Motel</option>
-                            <option value="Hotel">Hotel</option>
-                            <option value="Hostel">Hostel</option>
-                            <option value="House">House</option>
-                        </select>
-                    </div>
+                        <!--Type of Beach-->
+                        <div class="filter">
+                            <label for="beach">Type of Beach</label>
+                            <select name="beach" id="beach" class="select">
+                                <option value="">Any</option>
+                                <option value="Kid Friendly">Kid Friendly</option>
+                                <option value="Surf Friendly">Surf Friendly</option>
+                                <option value="Fishing">Fishing</option>
+                                <option value="Snorkeling">Snorkeling</option>
+                                <option value="Vehicle Access">Vehicle Access</option>
+                            </select>
+                        </div>
 
-                    <!--Type of Beach-->
-                    <div class="filter">
-                        <label for="beach">Type of Beach</label>
-                        <select name="beach" id="beach" class="full-width-select" required>
-                            <option value="">Any</option>
-                            <option value="Motel">Kid Friendly</option>
-                            <option value="Hotel">Surf Friendly</option>
-                            <option value="Hostel"></option>
-                            <option value="House">House</option>
-                        </select>
-                    </div>
+                        <div class="date-box">
+                            <!-- Start Date -->
+                            <div class="filter">
+                                <label for="startDate">Start Date:</label>
+                                <input type="text" id="startDate" name="startDate" class="date-select">
+                            </div>
 
-                    <!-- Start Date -->
-                    <div class="filter">
-                        <label for="startDate">Start Date:</label>
-                        <input type="text" id="startDate" name="startDate" class="full-width-select" required>
-                    </div>
+                            <!-- End Date -->
+                            <div class="filter">
+                                <label for="endDate">End Date:</label>
+                                <input type="text" id="endDate" name="endDate" class="date-select">
+                            </div>
+                        </div>
 
-                    <!-- End Date -->
-                    <div class="filter">
-                        <label for="endDate">End Date:</label>
-                        <input type="text" id="endDate" name="endDate" class="full-width-select" required>
-                    </div>
+                        <button id="searchBtn">Search Rooms</button>
 
-                    <button id="searchBtn">Search Rooms</button>
-
-                    <div id="error-message"></div>
-                </form>
+                        <div id="errorMessage"></div>
+                    </form>
 
                 </div>
 
-                
+
             </div>
             <!-- End of Slide 1 -->
 
             <!-- Slide 2 - FILTERED CARD OUTPUT -->
             <div class="slide">
-               
+                <header>
+
+                </header>
+                <div class="button-section">
+                    <button class="sort-button" id="sortHighToLow">$$$-$</button>
+                    <button class="sort-button" id="sortLowToHigh">$-$$$</button>
+                </div>
+                <div id="results"></div>
             </div>
 
             <!-- Slide 3 - SELECTED CARD OUTPUT -->
-            <div class="slide" id="selectedCardOutputSlide">
+            <div class="slide">
+                <button></button>
+                <div id="selectedOutput">
+
+                </div>
 
             </div>
 
@@ -139,6 +147,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <!-- Custom JS -->
     <script src="./js/script.min.js"></script>
-    
+
 </body>
+
 </html>
