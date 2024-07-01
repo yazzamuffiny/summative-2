@@ -21,7 +21,9 @@
 
 <body>
 
-    <nav id="navbar"></nav>
+    <nav id="navbar">
+        <img src="./imgs/nz-tourism.webp" alt="New Zealand Tourism Logo">
+    </nav>
     <div id="fullpage">
         <div class="section">
             <div class="slide" id="slide1">
@@ -43,7 +45,8 @@
                         <!-- Number of Guests -->
                         <div class="filter">
                             <label for="guests">Number of Guests:</label>
-                            <select name="guests" id="guests" class="full-width-select">
+                            <br>
+                            <select name="guests" id="guests" class="select">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -53,7 +56,8 @@
 
                         <!--Type of Accommodation-->
                         <div class="filter">
-                            <label for="accommodation">Type of Accommodation</label>
+                            <label for="accommodation">Type of Accommodation:</label>
+                            <br>
                             <select name="accommodation" id="accommodation" class="select">
                                 <option value="">Any</option>
                                 <option value="Motel">Motel</option>
@@ -65,7 +69,8 @@
 
                         <!--Type of Beach-->
                         <div class="filter">
-                            <label for="beach">Type of Beach</label>
+                            <label for="beach">Type of Beach:</label>
+                            <br>
                             <select name="beach" id="beach" class="select">
                                 <option value="">Any</option>
                                 <option value="Kid Friendly">Kid Friendly</option>
@@ -80,12 +85,14 @@
                             <!-- Start Date -->
                             <div class="filter">
                                 <label for="startDate">Start Date:</label>
+                                <br>
                                 <input type="text" id="startDate" name="startDate" class="date-select">
                             </div>
 
                             <!-- End Date -->
                             <div class="filter">
                                 <label for="endDate">End Date:</label>
+                                <br>
                                 <input type="text" id="endDate" name="endDate" class="date-select">
                             </div>
                         </div>
@@ -97,7 +104,63 @@
 
                 </div>
 
-
+                <footer id="footer">
+                    <div class="footer-section">
+                        <h3>Find us on</h3>
+                        <p><i class="fa-brands fa-x-twitter"></i> X 
+                            <br>
+                            <i class="fa-brands fa-instagram"></i> Instagram 
+                            <br>
+                            <i class="fa-brands fa-facebook"></i> Facebook 
+                            <br>
+                            <i class="fa-brands fa-youtube"></i> Youtube
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p>Site Feedback
+                            <br>
+                            Need Help?  
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Help</h3>
+                        <p>FAQ
+                            <br>
+                            About Us
+                            <br>
+                            Adding your business
+                            <br>
+                            Terms of Use
+                            <br>
+                            Privacy Policy
+                            <br>
+                            Cookies
+                            <br>
+                            Manage privacy settings
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Our other Sites</h3>
+                        <p> Media
+                            <br>
+                            newzealand.com 
+                            <br>
+                            The Visual Library
+                            <br>
+                            Travel Trade
+                            <br>
+                            Business Events
+                            <br>
+                            Corporate Website
+                            <br>
+                            Tourism Business Database
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <img src="./imgs/nz-tourism.webp" alt="New Zealand Tourism Logo">
+                    </div>
+                </footer>
             </div>
             <!-- End of Slide 1 -->
 
@@ -107,32 +170,150 @@
 
                 </header>
                 <div class="button-section">
-                    <button class="sort-button" id="sortHighToLow">$$$-$</button>
-                    <button class="sort-button" id="sortLowToHigh">$-$$$</button>
+                    <button class="back-button" id="toForm"><i class="fa-solid fa-arrow-left"></i></button>
+                    <div class="sort-button-container">
+                        <button class="sort-button" id="sortHighToLow">$$$-$</button>
+                        <button class="sort-button" id="sortLowToHigh">$-$$$</button>
+                    </div>
+                    
                 </div>
                 <div id="results"></div>
+                <footer id="footer">
+                    <div class="footer-section">
+                        <h3>Find us on</h3>
+                        <p><i class="fa-brands fa-x-twitter"></i> X 
+                            <br>
+                            <i class="fa-brands fa-instagram"></i> Instagram 
+                            <br>
+                            <i class="fa-brands fa-facebook"></i> Facebook 
+                            <br>
+                            <i class="fa-brands fa-youtube"></i> Youtube
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p>Site Feedback
+                            <br>
+                            Need Help?  
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Help</h3>
+                        <p>FAQ
+                            <br>
+                            About Us
+                            <br>
+                            Adding your business
+                            <br>
+                            Terms of Use
+                            <br>
+                            Privacy Policy
+                            <br>
+                            Cookies
+                            <br>
+                            Manage privacy settings
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Our other Sites</h3>
+                        <p> Media
+                            <br>
+                            newzealand.com 
+                            <br>
+                            The Visual Library
+                            <br>
+                            Travel Trade
+                            <br>
+                            Business Events
+                            <br>
+                            Corporate Website
+                            <br>
+                            Tourism Business Database
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <img src="./imgs/nz-tourism.webp" alt="New Zealand Tourism Logo">
+                    </div>
+                </footer>
             </div>
 
             <!-- Slide 3 - SELECTED CARD OUTPUT -->
             <div class="slide">
-                <button></button>
+                <button class="back-button" id="toProperties"><i class="fa-solid fa-arrow-left"></i></button>
+                
                 <div id="selectedOutput">
 
                 </div>
-
+                <footer id="footer">
+                    <div class="footer-section">
+                        <h3>Find us on</h3>
+                        <p><i class="fa-brands fa-x-twitter"></i> X 
+                            <br>
+                            <i class="fa-brands fa-instagram"></i> Instagram 
+                            <br>
+                            <i class="fa-brands fa-facebook"></i> Facebook 
+                            <br>
+                            <i class="fa-brands fa-youtube"></i> Youtube
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p>Site Feedback
+                            <br>
+                            Need Help?  
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Help</h3>
+                        <p>FAQ
+                            <br>
+                            About Us
+                            <br>
+                            Adding your business
+                            <br>
+                            Terms of Use
+                            <br>
+                            Privacy Policy
+                            <br>
+                            Cookies
+                            <br>
+                            Manage privacy settings
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Our other Sites</h3>
+                        <p> Media
+                            <br>
+                            newzealand.com 
+                            <br>
+                            The Visual Library
+                            <br>
+                            Travel Trade
+                            <br>
+                            Business Events
+                            <br>
+                            Corporate Website
+                            <br>
+                            Tourism Business Database
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <img src="./imgs/nz-tourism.webp" alt="New Zealand Tourism Logo">
+                    </div>
+                </footer>
             </div>
 
         </div>
     </div>
+    
 
 
 
 
 
 
-
-
-
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ff75b7e563.js" crossorigin="anonymous"></script>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Jquery UI -->
