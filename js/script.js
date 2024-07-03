@@ -1,7 +1,5 @@
 /* jshint esversion: 6 */
 
-
-
 const properties = [
     {
         id: 1,
@@ -611,12 +609,6 @@ $(document).ready(function () {
         fullpage_api.moveTo(1, 1);
     });
 
-
-
-
-
-
-
     function populateSelectedOutput(selectedId) {
         const outputDiv = $("#selectedOutput");
 
@@ -677,13 +669,11 @@ $(document).ready(function () {
         outputDiv.append(detailsPage);
         initaliseMap(longitude, latitude);
 
-        const costDiv = $("#estimatedCosts");
-        $("#calculateButton").click(function () {
-            console.log("wortking");
-            
+        $("#calculateButton").click(function () {          
             estimatedCost();
-            
         });
+
+
         function estimatedCost() {
             let breakfast = 0;
             let lunch = 0;
@@ -692,7 +682,6 @@ $(document).ready(function () {
             let guests = parseInt($("#guests").val());
             let diffDays = calculateDays();
             
-            // Calculate meal costs based on checkbox selections
             if ($("#breakfast").is(":checked")) {
                 breakfast = 10;
             }
@@ -708,11 +697,9 @@ $(document).ready(function () {
             let mealCost = (breakfast + lunch + dinner);
     
             let totalCost = (diffDays * price) + (mealCost * diffDays * guests);
-            console.log(diffDays);
-            console.log(mealCost);
-            console.log(totalCost);
-            costDiv.html("");
-            costDiv.append(`<p>$${totalCost.toFixed(2)}</p>`);
+
+            $("#estimatedCosts").html("");
+            $("#estimatedCosts").append(`<p>$${totalCost.toFixed(2)}</p>`);
         }
 
  
