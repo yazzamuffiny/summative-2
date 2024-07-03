@@ -611,13 +611,19 @@ $(document).ready(function () {
         fullpage_api.moveTo(1, 1);
     });
 
+
+
+
+
+
+
     function populateSelectedOutput(selectedId) {
         const outputDiv = $("#selectedOutput");
 
         const detailsPage = `
             <div class="details">
                 <h1>${properties[selectedId - 1].name}</h1>
-                <h4>${properties[selectedId - 1].location}</h4>
+                <h4>${properties[selectedId - 1].location} <br> ${properties[selectedId - 1].price} per night</h4>
                 <div class="description">
                     <p>${properties[selectedId - 1].description}</p>
                     <div class="beach-details">
@@ -637,12 +643,24 @@ $(document).ready(function () {
                 </div>
                 <h3>Estimated Cost</h3>
                 <div class="cost-container">
-                    <div class="nights-staying"></div>
-                    <div class="menu-selection"></div>
-                    <div class="calculate"></div>
+                    <div class="menu-selection">
+                        <h5> Meal Options</h5>
+                        <input type="checkbox" id="breakfast" name="breakfast" value="breakfast">
+                        <label for="breakfast"> Breakfast: $10 per person</label><br>
+                        <input type="checkbox" id="lunch" name="lunch" value="lunch">
+                        <label for="lunch"> Lunch: $15 per person</label><br>
+                        <input type="checkbox" id="dinner" name="dinner" value="dinner">
+                        <label for="dinner">Dinner: $25 per person</label><br>
+                    </div>
+                    <div class="calculate">
+                        <h5> Estimated Total Cost </h5>
+                        <button id="calculateButton">Calculate</button>
+                        <div id="estimatedCosts"></div>
+                    </div>
                 </div>
                 <h3>Location</h3>
                 <div id="map"></div>
+                <h3> Links </h3>
                 <div class="details-buttons-container">
                     <a href="#" class="square-button">Book Now</a>
                     <a href="#" class="square-button">Visit Site</a>
@@ -658,6 +676,48 @@ $(document).ready(function () {
         outputDiv.empty();
         outputDiv.append(detailsPage);
         initaliseMap(longitude, latitude);
+
+        const costDiv = $("#estimatedCosts");
+        $("#calculateButton").click(function () {
+            console.log("wortking");
+            
+            estimatedCost();
+            
+        });
+        function estimatedCost() {
+            let breakfast = 0;
+            let lunch = 0;
+            let dinner = 0;
+            let price = parseFloat(properties[selectedId -1].price.replace(/\$/g, ''));
+            let guests = parseInt($("#guests").val());
+            let diffDays = calculateDays();
+            
+            // Calculate meal costs based on checkbox selections
+            if ($("#breakfast").is(":checked")) {
+                breakfast = 10;
+            }
+        
+            if ($("#lunch").is(":checked")) {
+                lunch = 15;
+            }
+        
+            if ($("#dinner").is(":checked")) {
+                dinner = 25;
+            }
+    
+            let mealCost = (breakfast + lunch + dinner);
+    
+            let totalCost = (diffDays * price) + (mealCost * diffDays * guests);
+            console.log(diffDays);
+            console.log(mealCost);
+            console.log(totalCost);
+            costDiv.html("");
+            costDiv.append(`<p>$${totalCost.toFixed(2)}</p>`);
+        }
+
+ 
+        
+        
 
         const swiper = new Swiper('.swiper', {
             // Optional parameters
